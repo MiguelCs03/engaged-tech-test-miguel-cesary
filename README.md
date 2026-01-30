@@ -61,18 +61,28 @@ npm run dev
 
 ## 📧 Configuración SMTP
 
+**⚠️ IMPORTANTE: Este proyecto utiliza SMTP de Google (Gmail)**
+
 Necesitas una **contraseña de aplicación de Gmail**:
 
 1. Activa verificación en 2 pasos en Google
 2. Ve a: https://myaccount.google.com/apppasswords
 3. Genera contraseña para "Correo"
-4. Guárdala en `.env`:
+4. Configura en tu archivo `.env` con estos valores:
 
 ```env
+MAIL_MAILER=smtp
+MAIL_SCHEME=null
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
 MAIL_USERNAME=tu_correo@gmail.com
-MAIL_PASSWORD=tu_contraseña_de_aplicacion
+MAIL_PASSWORD=tu_contraseña_de_aplicacion_generada
 MAIL_FROM_ADDRESS=tu_correo@gmail.com
+MAIL_FROM_NAME="Prueba Engaged Tech"
+MAIL_ENCRYPTION=tls
 ```
+
+**Nota:** La `MAIL_PASSWORD` debe ser la contraseña de aplicación generada, NO tu contraseña regular de Gmail.
 
 ## 📂 Estructura
 
